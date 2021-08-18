@@ -80,3 +80,4 @@
 ..\obj\test.o: ..\HARDWARE\KEY\key.h
 ..\obj\test.o: ..\HARDWARE\LED\led.h
 ..\obj\test.o: ..\USER\pic.h
+..\obj\test.o: ..\USER\eh100.h

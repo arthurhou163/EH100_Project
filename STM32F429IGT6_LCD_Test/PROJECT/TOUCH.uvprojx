@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F429xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\OBJ;..\USER;..\HALLIB\STM32F4xx_HAL_Driver\Inc;..\SYSTEM\delay;..\SYSTEM\sys;..\HARDWARE\LED;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\KEY;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\TOUCH;..\USER;..\HARDWARE\SDRAM</IncludePath>
+              <IncludePath>..\CORE;..\OBJ;..\USER;..\HALLIB\STM32F4xx_HAL_Driver\Inc;..\SYSTEM\delay;..\SYSTEM\sys;..\HARDWARE\LED;..\HARDWARE\KEY;..\HARDWARE\LCD;..\HARDWARE\KEY;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\TOUCH;..\USER;..\HARDWARE\SDRAM;..\HARDWARE\CH450Key</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -567,7 +567,12 @@
             <File>
               <FileName>CH450_i2c.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\CH450\CH450_i2c.c</FilePath>
+              <FilePath>..\HARDWARE\CH450Key\CH450_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\EXTI\exti.c</FilePath>
             </File>
           </Files>
         </Group>

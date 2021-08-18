@@ -1,4 +1,4 @@
-..\obj\ch450_i2c.o: ..\HARDWARE\CH450\CH450_i2c.c
+..\obj\ch450_i2c.o: ..\HARDWARE\CH450Key\CH450_i2c.c
 ..\obj\ch450_i2c.o: ..\SYSTEM\sys\sys.h
 ..\obj\ch450_i2c.o: ..\USER\stm32f4xx.h
 ..\obj\ch450_i2c.o: ..\USER\stm32f429xx.h
@@ -71,3 +71,5 @@
 ..\obj\ch450_i2c.o: ..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h
 ..\obj\ch450_i2c.o: ..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h
 ..\obj\ch450_i2c.o: ..\HALLIB\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_hcd.h
+..\obj\ch450_i2c.o: ..\SYSTEM\delay\delay.h
+..\obj\ch450_i2c.o: ..\HARDWARE\CH450Key\ch450i2c.h

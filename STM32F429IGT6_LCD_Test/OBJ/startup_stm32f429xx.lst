@@ -925,9 +925,9 @@ Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=..\obj\startup_stm32f429xx.d -o..\obj\startup_stm32f429xx.o -I.
 \RTE\_EH100 -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device
 \ST\STM32F4xx\Include -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\PACK\Keil
-\STM32F4xx_DFP\2.7.0\Device\Include --predefine="__EVAL SETA 1" --predefine="__
-UVISION_VERSION SETA 523" --predefine="STM32F429xx SETA 1" --list=..\obj\startu
-p_stm32f429xx.lst ..\CORE\startup_stm32f429xx.s
+\STM32F4xx_DFP\2.7.0\Device\Include --predefine="__UVISION_VERSION SETA 523" --
+predefine="STM32F429xx SETA 1" --list=..\obj\startup_stm32f429xx.lst ..\CORE\st
+artup_stm32f429xx.s
 
 
 
@@ -2118,4 +2118,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-457 symbols in table
+456 symbols in table
