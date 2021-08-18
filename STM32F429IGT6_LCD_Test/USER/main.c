@@ -70,7 +70,7 @@
 #include "test.h"
 #include "sdram.h"
 #include "eh100.h"
-#include "ch450i2c.h"
+
  
  
 void LCD_Test();
@@ -79,19 +79,15 @@ void DealwithAnalogs(ANALOG analog);
 void Get_Temperatures(ANALOG Analogs);       //获取5个节点温度
 
 char Date;
-char KeyNumber;   //用来存储按键代码
-char NewKey;      //用来标识有新的按键加入
-
 int main(void)
 {	
-	 int LCD_Place=0x1000;           //菜单项的位置
    HAL_Init();                     //初始化HAL库   
    Stm32_Clock_Init(360,25,2,8);   //设置时钟,180Mhz
    delay_init(180);                //初始化延时函数
 	 SDRAM_Init();                   //初始化SDRAM
 	 LCD_Init();	                   //液晶屏初始化
-//	 ch450Key_init();                     //按键初始化
-/*	 SD_Init();                      // SD卡初始化
+/*	 KEY_Init();                     //按键初始化
+	 SD_Init();                      // SD卡初始化
 	 USART_Init();                   // 串口1和串口2初始化，速率都为115200
 	 NETWORK_Init();                 //网络端口初始化
 	 DS1302_Init();                  //时间初始化
@@ -104,18 +100,15 @@ int main(void)
 	 RELAY24_Init();                  //24路继电器初始化
 	 NVIC_Init();                     //初始化中断向量
 	*/
-   NewKey=0;               //新按键标识，0表示没有新按键，1表示有
-	 KeyNumber=0;             //按键值7位
-	 
 	 while(1)
-	 {   LCD_Test();
-     // Get_Time(Time);              //获取时间		 
-		 
-		 // KEY_NUM=KEY_SCAN();          
-		 //KeyNumber=ch450_ReadKey();//读取键值在中断中完成
-	/*	  if(NewKey!=0)              //如果有按键
-      {   NewKey=0;      //清除此标记
-				  switch(KeyNumber)
+	 {  
+		  int KEY_NUM=0;               //按键值
+		  int LCD_Place=0x0000;        //菜单项的位置   
+      Get_Time(Time);              //获取时间		 
+		 // KEY_NUM=KEY_SCAN();          //读取键值
+		  if(KEY_NUM！=0)              //如果有按键
+      {
+				  switch(KEY_NUM)
 					{	
 						case 0:
 							break;
@@ -148,7 +141,7 @@ int main(void)
 							 DealwithEvent(alarmNum&0x01);        //处理事件1
 						   ReportEvent(Time,ALARM1);     //汇报事件1到上位机服务器(网络通信)
 							 SD_Write(Time,ALARM1);        //记录事件到SD卡
-							 alarmNum=alarmNum^0x01;    //清除该位，清除事件1标志位
+							 alarmNum^0x01;    //清除该位，清除事件1标志位
 							break;
 						case alarmNum&0x02:
 							 DealwithEvent(alarmNum&0x02);    //处理事件2
@@ -206,9 +199,9 @@ int main(void)
 							break;						
 					}						
 				
-			}  */
+			}
 			delay_ms(5000);  //延时5秒钟
-			HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_11); //每5秒钟LED0状态翻转一次
+			HAL_GPIO_TogglePin(GPIOF,GPIO_Pin_11); //每5秒钟LED0状态翻转一次
 	}
 }
 void LCD_Test()
@@ -233,7 +226,7 @@ void Get_Analogs(ANALOG Analogs)                //获取5路温度及8路模拟量
 	// Get_Analog8(Analogs);           //获取5路温度及8路模拟量
 }
 
-void DealwithAnalogs(ANALOG analog)     //对5路温度及8路模拟量进行处理
+void DealwithAnalogs(Analog analog)     //对5路温度及8路模拟量进行处理
 {
 	
 }

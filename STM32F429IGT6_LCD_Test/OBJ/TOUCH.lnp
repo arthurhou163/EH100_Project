@@ -27,8 +27,6 @@
 "..\obj\key.o"
 "..\obj\24cxx.o"
 "..\obj\sdram.o"
-"..\obj\ch450_i2c.o"
-"..\obj\exti.o"
 --strict --scatter "..\OBJ\TOUCH.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

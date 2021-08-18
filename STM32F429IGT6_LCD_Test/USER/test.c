@@ -79,7 +79,6 @@
 #include "key.h" 
 #include "led.h"
 #include "pic.h"
-#include "eh100.h"
 
 //========================variable==========================//
 u16 ColorTab[5]={RED,GREEN,BLUE,YELLOW,BRED};//¶¨ÒåÑÕÉ«Êý×é
@@ -116,16 +115,11 @@ Gui_StrCenter(0,lcddev.height-18,WHITE,BLUE,"http://www.lcdwiki.com",16,1);//¾ÓÖ
 ******************************************************************************/
 void main_test(void)
 {
-	 int i;
-	DrawTestPage((u8 *)"¶«·½Ï£ÍûEH100»·¿Ø»ú");//MENU0[7][6]	
-	for(i=0;i<7;i++)
-	{
-		Gui_StrCenter(0,30*(i+1),RED,BLUE,(u8 *)MENU0[i],16,1);//¾ÓÖÐÏÔÊ¾,ÏÔÊ¾µÚÒ»¼¶²Ëµ¥
-	}
-/*	Gui_StrCenter(0,30,RED,BLUE,"È«¶¯µç×Ó",16,1);//¾ÓÖÐÏÔÊ¾
+	DrawTestPage("È«¶¯µç×Ó×ÛºÏ²âÊÔ³ÌÐò");	
+	Gui_StrCenter(0,30,RED,BLUE,"È«¶¯µç×Ó",16,1);//¾ÓÖÐÏÔÊ¾
 	Gui_StrCenter(0,60,RED,BLUE,"×ÛºÏ²âÊÔ³ÌÐò",16,1);//¾ÓÖÐÏÔÊ¾	
 	Gui_StrCenter(0,90,MAGENTA,BLUE,"3.5\" ILI9486 320X480",16,1);//¾ÓÖÐÏÔÊ¾
-	Gui_StrCenter(0,120,BLUE,BLUE,"xiaoFeng@QDtech 2018-12-27",16,1);//¾ÓÖÐÏÔÊ¾*/
+	Gui_StrCenter(0,120,BLUE,BLUE,"xiaoFeng@QDtech 2018-12-27",16,1);//¾ÓÖÐÏÔÊ¾
 	delay_ms(1500);		
 	delay_ms(1500);
 }

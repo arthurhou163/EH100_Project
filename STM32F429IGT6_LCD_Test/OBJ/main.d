@@ -79,4 +79,3 @@
 ..\obj\main.o: ..\USER\test.h
 ..\obj\main.o: ..\HARDWARE\SDRAM\sdram.h
 ..\obj\main.o: ..\USER\eh100.h
-..\obj\main.o: ..\HARDWARE\CH450Key\ch450i2c.h
